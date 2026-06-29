@@ -1,4 +1,4 @@
-# Repayment Mortgage Calculator by Juan M. Torrijos
+# Repayment Mortgage Calculator
 [Check out the calculator here](https://moitorrijos.github.io/mortgage-calculator/)
 
 [Check out the frontend mentor challenge here](https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73)
