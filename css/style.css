@@ -110,6 +110,7 @@ input {
     border-radius: var(--input-radius);
 }
 
+// TODO: Add focus state for input fields
 .form-wrap {
     display: inline-flex;
     align-items: stretch;
