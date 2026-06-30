@@ -45,19 +45,19 @@ body {
     background-color: var(--white);
     max-width: 1008px;
     
-    & > * {
-        padding: 2.5rem;
-    }
-
-    h1 {
-        margin: 0;
-        color: var(--slate-900);
-        font-size: 1.5rem;
-    }
-
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
+}
+
+.calculator > * {
+    padding: 2.5rem;
+}
+
+.calculator h1 {
+    margin: 0;
+    color: var(--slate-900);
+    font-size: 1.5rem;
 }
 
 form {
@@ -65,14 +65,15 @@ form {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 
-    p {
-        color: var(--slate-700);
-        margin: 0;
-    }
-
+    
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
     }
+}
+
+form p {
+    color: var(--slate-700);
+    margin: 0;
 }
 
 .calculator-header {
@@ -106,46 +107,64 @@ input {
     line-height: 1;
     font-size: 1rem;
     padding: var(--form-padding);
-    border: 1px solid var(--slate-700);
+    border: 1px solid var(--slate-500);
     border-radius: var(--input-radius);
 }
 
-// TODO: Add focus state for input fields
 .form-wrap {
-    display: inline-flex;
+    display: flex;
     align-items: stretch;
-
-    input {
-        width: 100%;
-        border-right: none;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    span {
-        display: block;
-        font-weight: 600;
-        padding: var(--form-padding);
-        line-height: 1;
-        background-color: var(--slate-100);
-        color: var(--slate-700);
-        border: 1px solid var(--slate-700);
-        border-left: none;
-        border-top-right-radius: var(--input-radius);
-        border-bottom-right-radius: var(--input-radius);
-    }
 }
 
-.reverse {
-    flex-direction: row-reverse;
+.form-wrap input {
+    width: 100%;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-wrap.reverse input {
+    border-right: 1px solid var(--slate-500);
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--input-radius);
+    border-bottom-right-radius: var(--input-radius);
+}
+
+.form-wrap input:hover, .form-wrap.reverse input:hover {
+    border-color: var(--slate-900);
+}
+
+.form-wrap span {
+    display: block;
+    font-weight: 600;
+    padding: var(--form-padding);
+    line-height: 1;
+    background-color: var(--slate-100);
+    color: var(--slate-700);
+    border: 1px solid var(--slate-500);
+    border-left: none;
+    border-top-right-radius: var(--input-radius);
+    border-bottom-right-radius: var(--input-radius);
+}
+
+.form-wrap.reverse span {
+    border-left: 1px solid var(--slate-500);
+    border-right: none;
+    border-top-left-radius: var(--input-radius);
+    border-bottom-left-radius: var(--input-radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .full-width {
     grid-column: 1 / -1;
 
-    & > input {
-        width: 100%;
-    }
+}
+
+.full-width > input {
+    width: 100%;
 }
 
 .calculator-results {
@@ -158,23 +177,22 @@ input {
     align-items: center;
     border-bottom-left-radius: 4rem;
     
-    h2 {
-        color: var(--white);
-        font-size: 1.5rem;
-        letter-spacing: 0.5px;
-    }
-
+    
     @media (max-width: 768px) {
         border-bottom-left-radius: 0;
     }
+}
+
+.calculator-results h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
 }
 
 .mortgage-type-wrapper {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
-
 }
 
 .radio-input {
@@ -188,16 +206,16 @@ input {
     font-weight: 600;
     flex-direction: row-reverse; 
     justify-content: flex-start;
+}
 
-    input  {
-        margin: 0;
-        width: fit-content;
-    }
+.radio-input input  {
+    margin: 0;
+    width: fit-content;
+}
 
-    span {
-        width: 100%;
-        white-space: nowrap;
-    }
+.radio-input span {
+    width: 100%;
+    white-space: nowrap;
 }
 
 .calculate-button {
